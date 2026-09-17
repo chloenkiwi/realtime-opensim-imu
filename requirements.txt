@@ -1,0 +1,6 @@
+numpy
+scipy
+transforms3d
+websocket_client==1.8.0
+tomli
+ntplib

@@ -1,0 +1,50 @@
+# For more info about TOML files, check out https://toml.io/en/v1.0.0
+# This comment contains the list of sensors
+# In the "sensors = " line below, you can order any of the following sensors in any order as long 
+# as they match the data coming out of the app. 
+# Please preserve the comment so that you can copy/paste to change the sensors used.
+# sensor_labels_full = ['pelvis_imu','torso_imu','femur_l_imu','tibia_l_imu','calcn_l_imu','femur_r_imu','tibia_r_imu','calcn_r_imu','humerus_l_imu','ulna_l_imu','hand_l_imu','humerus_r_imu','ulna_r_imu','hand_r_imu']
+# sensors = ['calcn_l_imu','calcn_r_imu','tibia_l_imu','tibia_r_imu','femur_l_imu','femur_r_imu','pelvis_imu','torso_imu','ulna_l_imu','ulna_r_imu','humerus_l_imu','humerus_r_imu']
+sensors = ['calcn_l_imu','calcn_r_imu','tibia_l_imu','tibia_r_imu','femur_l_imu','femur_r_imu','pelvis_imu','torso_imu','radius_l_imu','radius_r_imu','humerus_l_imu','humerus_r_imu'] # 12imu
+# sensors = ['ulna_l_imu','ulna_r_imu','humerus_l_imu','humerus_r_imu']
+# sensors = ["calcn_l_imu", "calcn_r_imu", "tibia_l_imu", "tibia_r_imu", "femur_l_imu", "femur_r_imu", "pelvis_imu"] # 7imu
+# sensors = ['torso_imu', "tibia_r_imu", "calcn_r_imu", "femur_l_imu", "femur_r_imu", "pelvis_imu", "tibia_l_imu", "calcn_l_imu"] # 8imu
+# The base IMU is what all of the orientations is based off of. You can use one of the sensor names.
+base_imu = "pelvis_imu"
+# base_imu = "torso_imu"
+# This is the axis that is pointed "Forward" -z for backward pelvis imu
+base_imu_axis = "-z"
+# base_imu_axis = "y"
+# This is if you want to use saved SageMotion dsata to process or to do live streaming (usually rate=100)
+offline = false
+# This is the offline file name that is present in the offline folder. I check if offline is 
+# used, so it is okay if this is blank.
+offline_data_name = "1.csv"
+# This was tuned experimentially. Changing might be risky. 
+accuracy = 0.01 
+# This was tuned experimentially. Changing might be risky. 
+constraint_var = 10.0
+# This is the output data rate approximately since we do integer division. 
+# In the future, I hope to make the system run closer to 100 Hz though optimizaiton.
+rate = 20
+# Whether we want to save the IK angle data 
+log_angle = true
+# Whether we want to save the time delay
+log_time = false
+# Whether you want to visualize the data using the 3d visualizer
+visualize = true
+# Save the data to the following file name
+output_filename = "output.csv"
+time_filename = "time.csv"
+# Logging level (Debug, Info, Warning, Error)
+logging_level = "Error"
+# Offline data padded or not
+offline_padded = true
+# To improve offline accuracy
+offline_dev = false
+# Need data drop compensation
+datadrop_comp = false
+# Average quats in calibration
+ave_quat = true
+# Clamp model
+clamped = true
