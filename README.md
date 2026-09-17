@@ -6,8 +6,6 @@ Research code accompanying the IEEE TNSRE article **“Real-Time OpenSim via IMU
 
 This repository estimates full-body joint kinematics from streamed inertial measurement unit (IMU) orientations. It receives quaternion data from a SageMotion system, calibrates an OpenSim musculoskeletal model, and updates a real-time inverse-kinematics solver. Recorded IMU data can also be processed in offline mode.
 
-> **Release status:** research prototype. Complete the items in [Known limitations](#known-limitations) before creating an archival release.
-
 ## Features
 
 - Real-time quaternion streaming over WebSocket
